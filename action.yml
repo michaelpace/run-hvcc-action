@@ -1,17 +1,17 @@
 name: Run HVCC
-description: 'Runs the heavy compiler for pd patches'
+description: 'Runs the hvcc compiler for Pure Data patches. See https://github.com/Wasted-Audio/hvcc for more information about hvcc.'
 inputs:
   pd-file:
-    description: 'Path to the .pd file to run hvcc on'
+    description: 'Path to the .pd file to serve as input to hvcc'
     required: true
   output-patch-name:
-    description: 'Output patch name'
+    description: 'Output patch name (-n argument to hvcc)'
     required: true
   generator:
-    description: 'The hvcc generator to use. See options here: https://github.com/Wasted-Audio/hvcc/blob/develop/docs/03.generators.md'
+    description: 'The hvcc generator to use (-g argument to hvcc)'
     required: true
   search-paths:
-    description: 'Any search paths to use for including supplementary pd functionality'
+    description: 'Any search paths to use for including supplementary pd functionality (-p argument to hvcc)'
     requried: false
 runs:
   using: "composite"
