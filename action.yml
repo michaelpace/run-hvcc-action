@@ -4,6 +4,9 @@ inputs:
   pd-file:
     description: 'Path to the .pd file to run hvcc on'
     required: true
+  output-patch-name:
+    description: 'Output patch name'
+    required: true
   generator:
     description: 'The hvcc generator to use. See options here: https://github.com/Wasted-Audio/hvcc/blob/develop/docs/03.generators.md'
     required: true
@@ -25,4 +28,4 @@ runs:
     - name: Run hvcc
       shell: bash
       run: |
-        hvcc ${{ inputs.pd-file }} -o ./HeavyBuild/hvccbuild -n hvccbuild -p ${{ inputs.search-paths }} -g ${{ inputs.generator }}
+        hvcc ${{ inputs.pd-file }} -o ./HeavyBuild/${{ inputs.output-patch-name }} -n ${{ inputs.output-patch-name }} -p ${{ inputs.search-paths }} -g ${{ inputs.generator }}
