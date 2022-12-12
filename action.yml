@@ -1,4 +1,5 @@
 name: Run HVCC
+description: 'Runs the heavy compiler for pd patches'
 inputs:
   pd-file:
     description: 'Path to the .pd file to run hvcc on'
